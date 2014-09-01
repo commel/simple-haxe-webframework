@@ -15,7 +15,7 @@ class App {
     var data = { name: name } 
     var output = Template.render("hello", data);
 
-    var rendered = Template.render("main", { yield: output } );
+    var rendered = Template.renderBase("main", output);
 
     Lib.print(rendered);
   }

@@ -8,21 +8,14 @@ class App {
     new App();
   } 
 
-  static function loadTemplate(file:String):String {
-    return sys.io.File.getContent('../templates/$file');
-  }
-
   public function new() {
-    var m = new haxe.Template(loadTemplate("main.html"));
-    var t = new haxe.Template(loadTemplate("hello.html"));
-
     var params = php.Web.getParams();
-    var name:Null<String> = params.exists("name") ? params.get("name") : "";
+    var name:Null<String> = params.exists("name") ? params.get("name") : "world";
 
     var data = { name: name } 
-    var output = t.execute(data);
+    var output = Template.render("hello", data);
 
-    var rendered = m.execute( { yield: output } );
+    var rendered = Template.render("main", { yield: output } );
 
     Lib.print(rendered);
   }

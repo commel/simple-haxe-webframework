@@ -9,3 +9,5 @@ In the directory "js" you will find the Haxe sources to generate JQuery-Javascri
 The "export"-directory contains a "templates"-directory that contains haxe-template-files. The "js" contains the generated javascript-sources.
 
 To build the page run "haxe compile" in the project's root directory.
+
+The index.php accepts an optional parameter "name", like this: index.php?name=whatever.

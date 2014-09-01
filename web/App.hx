@@ -9,7 +9,7 @@ class App {
   } 
 
   static function loadTemplate(file:String):String {
-    return sys.io.File.getContent('templates/$file');
+    return sys.io.File.getContent('../templates/$file');
   }
 
   public function new() {
